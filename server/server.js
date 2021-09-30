@@ -18,8 +18,14 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
     console.log(`${socket.id} connected.`)
 
-    socket.on('join-room', (room) => {
+    socket.on('join-room', (room, username) => {
+        socket.join(room)
         console.log(`${socket.id} joined room: ${room}`)
+        socket.emit('join-info', {username, room})
+    })
+    
+    socket.on('send-message', data => {
+        socket.to(data.room).emit('receive-message', data);
     })
 
     socket.on('disconnect', () => {

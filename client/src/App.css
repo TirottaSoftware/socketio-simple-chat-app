@@ -2,3 +2,53 @@
   margin: 0;
   padding:0;
 }
+.chat-box{
+  width: 350px;
+  height: 500px;
+  border: 1px solid black;
+  margin: 10% auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.chat-body{
+  padding: 1%;
+  overflow-y: scroll;
+}
+.chat-msg-box{
+  display: flex;
+  width: 100%;
+}
+.chat-msg-box input{
+  width: 80%;
+  padding: 1%;
+  font-size: 1.25rem;
+  outline: none;
+}
+.chat-msg-box button{
+  width: 20%;
+}
+.msg{
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+}
+.msg-body{
+  border: 1px solid  gray;
+  padding: 5%;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+.msg-green{
+  justify-content: end;
+  color: green;
+}
+.msg-blue{
+  color: blue;
+  justify-content: start;
+}
+.msg-info{
+  justify-content: center;
+}
