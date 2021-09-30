@@ -15,17 +15,18 @@ const io = new Server(server, {
     }
 });
 
-io.on('connection', () => {
-    console.log('Connection established.')
-    io.on('disconnect', () => {
+io.on('connection', (socket) => {
+    console.log(`${socket.id} connected.`)
+
+    socket.on('join-room', (room) => {
+        console.log(`${socket.id} joined room: ${room}`)
+    })
+
+    socket.on('disconnect', () => {
         console.log('Disconnected.')
     })
 })
 
-io.on('connect', socket => {
-    console.log(socket.id)
-})
-
 server.listen(3001, () => {
-    console.log('Listening on 3000')
+    console.log('Listening on 3001')
 })
