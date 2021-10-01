@@ -2,18 +2,37 @@
   margin: 0;
   padding:0;
 }
+
+.room-form{
+  display: flex;
+  flex-flow: column;
+  width: 40%;
+  margin: 20% auto;
+}
+.room-form h1{
+  text-align: center;
+  margin: 2%;
+}
+.room-form input, .room-form button{
+  width: 90%;
+  box-sizing: border-box;
+  padding: 3%;
+  margin: 2% 5% ;
+}
+
 .chat-box{
   width: 350px;
   height: 500px;
   border: 1px solid black;
-  margin: 10% auto;
+  padding: 1%;
+  margin: 25px auto;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
 }
 .chat-body{
   padding: 1%;
-  overflow-y: scroll;
+  position: relative;
 }
 .chat-msg-box{
   display: flex;
@@ -22,7 +41,7 @@
 .chat-msg-box input{
   width: 80%;
   padding: 1%;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   outline: none;
 }
 .chat-msg-box button{
@@ -51,4 +70,17 @@
 }
 .msg-info{
   justify-content: center;
+}
+.chat-box .msg-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.msg-scroll::-webkit-scrollbar{
+  display: none;
+}
+.chat-room-nr{
+  text-align: center;
+  margin-top: 10%;
 }
