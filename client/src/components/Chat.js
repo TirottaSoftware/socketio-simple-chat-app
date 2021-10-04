@@ -30,7 +30,19 @@ const Chat = ({socket, username, room}) => {
                 type: 'msg-info'
             }
             socket.emit('send-message', messageData);
+            console.log(messageData)
             setMessagesList((list) => [...list, messageData]);
+        })
+        socket.on('output', data =>{
+            data.forEach(msg => {
+                const messageData = {
+                    username: msg.sender,
+                    room: msg.room,
+                    type: msg.type,
+                    message: msg.content
+                }
+                setMessagesList((list) => [...list, messageData]);
+            });
         })
     }, [socket])
 
